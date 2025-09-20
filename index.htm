@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор утилизационного сбора на автомобили в России</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="tax-calculator">
+        <div class="calculator-inner">
+            <h2 class="calculator-title">🚗 Калькулятор утилизационного сбора на автомобили в России</h2>
+
+            <div class="input-group">
+                <label class="input-label">Вид двигателя</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="electric" name="vehicleType" value="electric" checked>
+                        <label for="electric">Электрокар или последовательный гибрид</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="engine" name="vehicleType" value="engine">
+                        <label for="engine">Двигатель внутреннего сгорания или параллельный гибрид</label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="engineSizeGroup" class="input-group" style="display: none;">
+                <label class="input-label">Объём двигателя</label>
+                <select id="engineSize" class="input-control">
+                    <option value="1000">≤1000 см3</option>
+                    <option value="2000">1001-2000 см3</option>
+                    <option value="3000">2001-3000 см3</option>
+                    <option value="3500">3001-3500 см3</option>
+                    <option value="4000">>3500 см3</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">Мощность двигателя</label>
+                <div class="power-input-group">
+                    <input type="number" id="powerInput" class="input-control power-input"
+                        placeholder="Введите мощность" min="0" step="0.1">
+                    <select id="powerUnit" class="input-control power-unit">
+                        <option value="kw">кВт</option>
+                        <option value="hp">л.с.</option>
+                    </select>
+                </div>
+                <div id="powerDisplay" class="power-display"></div>
+                <p class="info-text">Для электрокаров мощность должна быть усреднённой, а не пиковой. Мощность
+                    нескольких двигателей складывается</p>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">Год уплаты сбора</label>
+                <select id="taxYear" class="input-control">
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">Возраст автомобиля</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="newVehicle" name="vehicleAge" value="new" checked>
+                        <label for="newVehicle">Новый автомобиль</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="oldVehicle" name="vehicleAge" value="old">
+                        <label for="oldVehicle">Старше трёх лет</label>
+                    </div>
+                </div>
+                <!-- <p class="info-text">Выберите, если ваш автомобиль старше трёх лет</p> -->
+            </div>
+
+            <button class="calculate-btn" onclick="calculateTax()">Расчёт утилизационного сбора</button>
+            <div id="errorMessage" class="error-message"></div>
+
+            <div id="resultBox" class="result-box">
+                <div class="result-title">Ваш утилизационный сбор составит:</div>
+                <div class="result-value" id="taxAmount">₽\s0.00</div>
+                <div class="result-details" id="resultDetails"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
