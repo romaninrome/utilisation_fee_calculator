@@ -105,7 +105,7 @@ const powerRanges = {
             { min: 183.89, max: Infinity, label: "183.89+ кВт" }
         ],
         2000: [
-            { min: 0, max: 117.68, label: "Up to 117.68 кВт" },
+            { min: 0, max: 117.68, label: "До 117.68 кВт" },
             { min: 117.69, max: 139.75, label: "117.69 - 139.75 кВт" },
             { min: 139.76, max: 161.81, label: "139.76 - 161.81 кВт" },
             { min: 161.82, max: 183.88, label: "161.82 - 183.88 кВт" },
@@ -169,7 +169,7 @@ const powerRanges = {
 
 // Convert metric HP to kW
 function convertToKW(value, unit) {
-    return unit === "л.с." ? value * 0.7355 : value;
+    return unit === "hp" ? value * 0.7355 : value;
 }
 
 // Get power range index based on kW value
@@ -372,3 +372,7 @@ ${vehicleDetails}<br>
     // Scroll to results
     resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
+
+/**
+ * @copyright 2025 Roman_in_Rome. All rights reserved.
+ */
