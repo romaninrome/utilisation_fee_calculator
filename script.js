@@ -373,7 +373,11 @@
         const resultDetails = document.getElementById('resultDetails');
 
         // Format the amount
-        taxAmountElement.textContent = `₽${amount.toFixed(2)}`;
+        const formattedAmount = amount.toLocaleString('ru-RU', {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        });
+        taxAmountElement.textContent = `₽${formattedAmount}`;
 
         // Create detailed information
         const ageText = age === 'new' ? 'Новый' : 'Старше трёх лет';
