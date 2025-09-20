@@ -1,6 +1,8 @@
 (function () {
     // Utilisation fee data structure
     // Designed for a widget to PHP page, so no additional tables and JSONs.
+
+
     const taxData = {
         electric: [
             [0.17, 0.26, 0.17, 0.26, 0.17, 0.26, 0.17, 0.26, 0.17, 0.26, 0.17, 0.26],
@@ -85,6 +87,7 @@
     };
 
     // Power ranges for different vehicle types
+
     const powerRanges = {
         electric: [
             { min: 0, max: 58.84, label: "До 58,84 кВт" },
@@ -100,72 +103,87 @@
         engine: {
             1000: [
                 { min: 0, max: 117.68, label: "До 117,68 кВт" },
-                { min: 117.69, max: 139.75, label: "117,69 - 139,75 кВт" },
-                { min: 139.76, max: 161.81, label: "139,76 - 161,81 кВт" },
-                { min: 161.82, max: 183.88, label: "161,82 - 183,88 кВт" },
+                { min: 117.69, max: 139.75, label: "117,69 — 139,75 кВт" },
+                { min: 139.76, max: 161.81, label: "139,76 — 161,81 кВт" },
+                { min: 161.82, max: 183.88, label: "161,82 — 183,88 кВт" },
                 { min: 183.89, max: Infinity, label: "183,89+ кВт" }
             ],
             2000: [
                 { min: 0, max: 117.68, label: "До 117,68 кВт" },
-                { min: 117.69, max: 139.75, label: "117,69 - 139,75 кВт" },
-                { min: 139.76, max: 161.81, label: "139,76 - 161,81 кВт" },
-                { min: 161.82, max: 183.88, label: "161,82 - 183,88 кВт" },
-                { min: 183.89, max: 205.94, label: "183,89 - 205,94 кВт" },
-                { min: 205.95, max: 228.00, label: "205,95 - 228,00 кВт" },
-                { min: 228.01, max: 250.07, label: "228,01 - 250.07 кВт" },
-                { min: 250.08, max: 272.13, label: "250.08 - 272,13 кВт" },
-                { min: 272.14, max: 294.20, label: "272,14 - 294,20 кВт" },
-                { min: 294.21, max: 316.26, label: "294,21 - 316,26 кВт" },
-                { min: 316.27, max: 338.33, label: "316,27 - 338,33 кВт" },
-                { min: 338.34, max: 367.75, label: "338,34 - 367,75 кВт" },
+                { min: 117.69, max: 139.75, label: "117,69 — 139,75 кВт" },
+                { min: 139.76, max: 161.81, label: "139,76 — 161,81 кВт" },
+                { min: 161.82, max: 183.88, label: "161,82 — 183,88 кВт" },
+                { min: 183.89, max: 205.94, label: "183,89 — 205,94 кВт" },
+                { min: 205.95, max: 228.00, label: "205,95 — 228,00 кВт" },
+                { min: 228.01, max: 250.07, label: "228,01 — 250.07 кВт" },
+                { min: 250.08, max: 272.13, label: "250.08 — 272,13 кВт" },
+                { min: 272.14, max: 294.20, label: "272,14 — 294,20 кВт" },
+                { min: 294.21, max: 316.26, label: "294,21 — 316,26 кВт" },
+                { min: 316.27, max: 338.33, label: "316,27 — 338,33 кВт" },
+                { min: 338.34, max: 367.75, label: "338,34 — 367,75 кВт" },
                 { min: 367.76, max: Infinity, label: "367,76+ кВт" }
             ],
             3000: [
                 { min: 0, max: 117.68, label: "До 117,68 кВт" },
                 { min: 117.69, max: 139.75, label: "117,69 — 139,75 кВт" },
-                { min: 139.76, max: 161.81, label: "139.76 - 161,81 кВт" },
-                { min: 161.82, max: 183.88, label: "161,82 - 183,88 кВт" },
-                { min: 183.89, max: 205.94, label: "183,89 - 205,94 кВт" },
-                { min: 205.95, max: 228.00, label: "205,95 - 228,00 кВт" },
-                { min: 228.01, max: 250.07, label: "228,01 - 250,07 кВт" },
-                { min: 250.08, max: 272.13, label: "250,08 - 272,13 кВт" },
-                { min: 272.14, max: 294.20, label: "272,14 - 294,20 кВт" },
-                { min: 294.21, max: 316.26, label: "294,21 - 316,26 кВт" },
-                { min: 316.27, max: 338.33, label: "316,27 - 338,33 кВт" },
-                { min: 338.34, max: 367.75, label: "338,34 - 367,75 кВт" },
+                { min: 139.76, max: 161.81, label: "139.76 — 161,81 кВт" },
+                { min: 161.82, max: 183.88, label: "161,82 — 183,88 кВт" },
+                { min: 183.89, max: 205.94, label: "183,89 — 205,94 кВт" },
+                { min: 205.95, max: 228.00, label: "205,95 — 228,00 кВт" },
+                { min: 228.01, max: 250.07, label: "228,01 — 250,07 кВт" },
+                { min: 250.08, max: 272.13, label: "250,08 — 272,13 кВт" },
+                { min: 272.14, max: 294.20, label: "272,14 — 294,20 кВт" },
+                { min: 294.21, max: 316.26, label: "294,21 — 316,26 кВт" },
+                { min: 316.27, max: 338.33, label: "316,27 — 338,33 кВт" },
+                { min: 338.34, max: 367.75, label: "338,34 — 367,75 кВт" },
                 { min: 367.76, max: Infinity, label: "367,76+ кВт" }
             ],
             3500: [
                 { min: 0, max: 117.68, label: "До 117,68 кВт" },
-                { min: 117.69, max: 139.75, label: "117,69 - 139,75 кВт" },
-                { min: 139.76, max: 161.81, label: "139,76 - 161,81 кВт" },
-                { min: 161.82, max: 183.88, label: "161,82 - 183,88 кВт" },
-                { min: 183.89, max: 205.94, label: "183,89 - 205,94 кВт" },
-                { min: 205.95, max: 228.00, label: "205,95 - 228.00 кВт" },
-                { min: 228.01, max: 250.07, label: "228.01 - 250,07 кВт" },
-                { min: 250.08, max: 272.13, label: "250,08 - 272,13 кВт" },
-                { min: 272.14, max: 294.20, label: "272,14 - 294,20 кВт" },
-                { min: 294.21, max: 316.26, label: "294,21 - 316,26 кВт" },
-                { min: 316.27, max: 338.33, label: "316,27 - 338,33 кВт" },
-                { min: 338.34, max: 367.75, label: "338,34 - 367,75 кВт" },
+                { min: 117.69, max: 139.75, label: "117,69 — 139,75 кВт" },
+                { min: 139.76, max: 161.81, label: "139,76 — 161,81 кВт" },
+                { min: 161.82, max: 183.88, label: "161,82 — 183,88 кВт" },
+                { min: 183.89, max: 205.94, label: "183,89 — 205,94 кВт" },
+                { min: 205.95, max: 228.00, label: "205,95 — 228,00 кВт" },
+                { min: 228.01, max: 250.07, label: "228.01 — 250,07 кВт" },
+                { min: 250.08, max: 272.13, label: "250,08 — 272,13 кВт" },
+                { min: 272.14, max: 294.20, label: "272,14 — 294,20 кВт" },
+                { min: 294.21, max: 316.26, label: "294,21 — 316,26 кВт" },
+                { min: 316.27, max: 338.33, label: "316,27 — 338,33 кВт" },
+                { min: 338.34, max: 367.75, label: "338,34 — 367,75 кВт" },
                 { min: 367.76, max: Infinity, label: "367,76+ кВт" }
             ],
             4000: [
                 { min: 0, max: 117.68, label: "До 117,68 кВт" },
-                { min: 117.69, max: 139.75, label: "117,69 - 139.75 кВт" },
-                { min: 139.76, max: 161.81, label: "139,76 - 161.81 кВт" },
-                { min: 161.82, max: 183.88, label: "161,82 - 183.88 кВт" },
-                { min: 183.89, max: 205.94, label: "183,89 - 205.94 кВт" },
-                { min: 205.95, max: 228.00, label: "205,95 - 228.00 кВт" },
-                { min: 228.01, max: 250.07, label: "228,01 - 250.07 кВт" },
-                { min: 250.08, max: 272.13, label: "250,08 - 272.13 кВт" },
-                { min: 272.14, max: 294.20, label: "272,14 - 294.20 кВт" },
-                { min: 294.21, max: 316.26, label: "294,21 - 316.26 кВт" },
-                { min: 316.27, max: 338.33, label: "316,27 - 338.33 кВт" },
-                { min: 338.34, max: 367.75, label: "338,34 - 367.75 кВт" },
+                { min: 117.69, max: 139.75, label: "117,69 — 139,75 кВт" },
+                { min: 139.76, max: 161.81, label: "139,76 — 161,81 кВт" },
+                { min: 161.82, max: 183.88, label: "161,82 — 183,88 кВт" },
+                { min: 183.89, max: 205.94, label: "183,89 — 205,94 кВт" },
+                { min: 205.95, max: 228.00, label: "205,95 — 228,00 кВт" },
+                { min: 228.01, max: 250.07, label: "228,01 — 250,07 кВт" },
+                { min: 250.08, max: 272.13, label: "250,08 — 272,13 кВт" },
+                { min: 272.14, max: 294.20, label: "272,14 — 294.20 кВт" },
+                { min: 294.21, max: 316.26, label: "294,21 — 316,26 кВт" },
+                { min: 316.27, max: 338.33, label: "316,27 — 338.33 кВт" },
+                { min: 338.34, max: 367.75, label: "338,34 — 367,75 кВт" },
                 { min: 367.76, max: Infinity, label: "367,76+ кВт" }
             ]
         }
+    };
+
+    //bit safety
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    const engineSizeLabels = {
+        '1000': 'До 1000 см³',
+        '2000': '1000 — 2000 см³',
+        '3000': '2000 — 3000 см³',
+        '3500': '3000 — 3500 см³',
+        '4000': 'Свыше 3500 см³'
     };
 
     // Convert metric HP to kW
@@ -327,15 +345,15 @@
             if (vehicleType === 'electric') {
                 vehicleDetails = `
 <strong>Тип двигателя:</strong> Электрический или последовательный гибрид<br>
-<strong>Категория:</strong> ${rangeLabel}
+<strong>Категория:</strong> ${escapeHtml(rangeLabel)}
 `;
             } else {
-                const engineSizeText = document.getElementById('engineSize').options[document.getElementById('engineSize').selectedIndex].text;
+                const engineSizeText = engineSizeLabels[engineSize] || 'Unknown';
                 vehicleDetails = `
 <strong>Тип двигателя:</strong> ДВС<br>
-<strong>Объём двигателя:</strong> ${engineSizeText}<br>
-<strong>Мощность в кВт:</strong> ${powerKW.toFixed(2)} кВт<br>
-<strong>В какую категорию попадает:</strong> ${rangeLabel}
+<strong>Объём двигателя:</strong> ${escapeHtml(engineSizeText)}<br>
+<strong>Мощность в кВт:</strong> ${escapeHtml(powerKW.toFixed(2))} кВт<br>
+<strong>В какую категорию попадает:</strong> ${escapeHtml(rangeLabel)}
 `;
             }
 
@@ -364,7 +382,7 @@ ${vehicleDetails}<br>
 <strong>Год уплаты сбора:</strong> ${year}<br>
 <strong>Возраст автомобиля:</strong> ${ageText}<br>
 <br>
-<em>Это стоимость утилизационного сбора для вашего автомобиля по новым правилам. Рассчитано <a href=https://verstka.media/>"Вёрсткой"</a></em>
+<em>Это стоимость утилизационного сбора для вашего автомобиля по новым правилам. Рассчитано <a href="https://verstka.media/">"Вёрсткой"</a></em>
 `;
 
         // Show the result with animation
